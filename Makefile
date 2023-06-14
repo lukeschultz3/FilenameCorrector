@@ -13,3 +13,4 @@ resetSample:
 	touch Sample/Sub\ Directory\ 1/sub_file_2.txt
 	touch Sample/Sub_Directory_2/file4.txt
 	touch Sample/Sub_Directory_2/sub\ file_3.txt
+	touch Sample/file\ \(4\).txt

@@ -1,7 +1,7 @@
 """
 Created by Luke Schultz
 Created on June 12, 2023
-Last Modified on June 12, 2023
+Last Modified on June 14, 2023
 """
 
 import os
@@ -42,6 +42,8 @@ def get_corrected_file_paths(file_paths):
 
     for i in range(len(file_paths)):
         corrected_paths[i] = corrected_paths[i].replace(" ", "_")
+        corrected_paths[i] = corrected_paths[i].replace("(", "\(")
+        corrected_paths[i] = corrected_paths[i].replace(")", "\)")
         if VERBOSE:
             print("corrected '" + str(file_paths[i]) + "' to '"
                   + str(corrected_paths[i]) + "'")
@@ -58,6 +60,8 @@ def correct_file_paths(original_paths, correct_paths):
             continue
 
         command = ("mv " + original_paths[i].replace(" ", "\ ")
+                                            .replace("(", "\(")
+                                            .replace(")", "\)")
                    + " " + correct_paths[i])
         print(command)
         os.system(command)
